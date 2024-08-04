@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--- I declare that this code was written by me.
+I will not copy or allow others to copy my code. 
+I understand that copying code is considered as plagiarism.
+
+Student Name: Nur Alysha Binte Muhamad Amran
+Student ID: 23014686
+Class: C369-5D-W65F-A
+Date/Time Last modified: 3 August 2024, 11:27pm  -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> My Budget Buddy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<style>
+
+.collapsible {
+  color: black;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+
+}
+
+.collapsible {
+  background-color:  #CB99C9;
+}
+
+.content {
+ 
+  display: none;
+  overflow: hidden;
+  background-color: #F6E9F8;
+}
+
+p{ 
+    font-size: 15px;
+}
+
+.navbar{
+  background-color: pink;
+}
+
+h1{
+  margin-top: 30px;
+}
+footer{
+    background-color: pink;
+    font-size: 18px;
+}
+
+body{
+  margin-left:45px;
+  margin-right: 45px;
+}
+
+
+
+</style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html" > Homepage</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="description.html">Service Description</a>
+                    </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.html">Login/Sign Up</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="card.html">Card Details</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="digital.html">My Digital Wallet</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="transaction.html">My Transactions</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="report.html">View Report</a>
+                              </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact Us</a>
+                            </li>
+        </ul>
+        </ul>
+      </div>
+  </nav>
+<br></br>
+
+<h1>What can this website do ?</h1>
+
+<h5>Step 1:</h5>
+<button type="button" class="collapsible">To make Payment</button>
+<div class="content">
+  <p><ul> <li>CARD PAYMENT: 
+tap card on Point Of Sale (POS) machine
+message will be sent for verification. Click ‘yes’ if it is you. </li></p>
+
+<li>Scan and Pay:
+Scan QR code
+biometric is needed for verification </li></ul>
+
+*Finally, categorise your expenditure (eg: shopping, food, transportation)</p>
+</div>
+
+<br>
+
+<h5>Step 2:</h5>
+<button type="button" class="collapsible">Overall Expenditure for each month</button>
+<div class="content">
+<p>Pie chart will be shown on the money you spend on each month</p>
+</div>
+
+<br>
+
+<h5>Step 3:</h5>
+<button type="button" class="collapsible">Overview of the monthly report
+</button>
+<div class="content">
+  <p>
+Line graph will display a monthly report
+ of the whole expenditure. Compares the report with the previous month
+</p>
+</div>
+
+
+<br>
+<h5>Step 4:</h5>
+<button type="button" class="collapsible">Contact to get financial advice
+</button>
+<div class="content">
+  <p>
+Allow user to seek advice from a financial advisor. Monthly payment for unlimited calls.
+</p>
+</div>
+
+<br></br>
+
+<p> Click <a href="login.html">here </a> to sign up. You will require to pay <b>$10/month</b> to enjoy this service where u can do unlimited calls and text with a professional financial advice.</p>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+<footer class="text-center py-4 mt-3">
+  <p>NUR ALYSHA</p>
+</footer>
+
+</body>
+</html>
+

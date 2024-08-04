@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!--- I declare that this code was written by me.
+I will not copy or allow others to copy my code. 
+I understand that copying code is considered as plagiarism.
+
+Student Name: Nur Alysha Binte Muhamad Amran
+Student ID: 23014686
+Class: C369-5D-W65F-A
+Date/Time Last modified: 3 August 2024, 11:27pm  -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> My Budget Buddy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+     
+
+      <style>
+        .navbar{
+  background-color: pink;}
+
+
+
+  .date-selector {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+
+.calendar-icon {
+  width: 60px;
+}
+
+#month-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+#table-container {
+  max-width: 600px;
+  margin:  auto;
+}
+
+.income{
+  max-width: 300px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+
+#income {
+  width: 100%;
+  padding: 8px;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+button{
+  background-color: #CB99C9
+}
+
+footer{
+    background-color: pink;
+    font-size: 18px;
+}
+
+
+      </style>
+      </head>
+
+      <body>
+
+        <nav class="navbar navbar-expand-sm fixed-top ">
+          <div class="container-fluid">
+              <a class="navbar-brand" href="index.html" > Homepage</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+  
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav">
+                          <li class="nav-item">
+                              <a class="nav-link" href="description.html">Service Description</a>
+                          </li>
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="login.html">Login/Sign Up</a>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="card.html">Card Details</a>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="digital.html">My Digital Wallet</a>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="transaction.html">My Transactions</a>
+                                  </li>
+
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="report.html">View Report</a>
+                                    </li>
+
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="contact.html">Contact Us</a>
+                                  </li>
+
+
+              </ul>
+              </ul>
+            </div>
+        </nav>
+
+        <br></br>
+        <div class="income">
+          <label for="income">Income  amount:</label>
+          <input type="text" id="income" name="income" placeholder="Enter income amount">
+          <br></br>
+          <button id="generate">Generate</button>
+        </div>
+      
+
+        <div class="content-wrapper">
+        <div class="date-selector">
+            <div class="calendar">
+            <img src="https://static.vecteezy.com/system/resources/previews/005/988/959/original/calendar-icon-free-vector.jpg" alt="Calendar icon" class="calendar-icon"></div>
+                <select id="month" name="month">
+                    <option value ="" selected disabled> Select Month</option>
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+          </div>
+        </div>
+
+          <div id="month-image-container">
+            <img id="month-image" src="" alt="Month image" style="display: none; width: 600px; height:auto;">
+          </div>
+
+          <div id = "table-container" style = "display: none;">
+          <table class= "table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Amount</th>
+              </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Shopping</td>
+                  <td>$250</td>
+                </tr>
+                <tr>
+                  <td>Transportation</td>
+                  <td>$250</td>
+                </tr>
+                <tr>
+                  <td>Food</td>
+                  <td>$150</td>
+                </tr>
+                <tr>
+                  <td>Insurance</td>
+                  <td>$100</td>
+                </tr>
+                <tr>
+                  <td>Total</td>
+                  <td>$750</td>
+                </tr>
+                </tbody>
+                </table>
+                </div>
+
+                <div id="back" style="display: none; text-align: center; margin-top: 20px;">
+                  <a href="report.html" class="btn btn-primary">Back</a>
+                </div>
+                <footer class="text-center py-3 mt-4">
+                  <p>NUR ALYSHA</p>
+                </footer>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              const monthSelect = document.getElementById('month');
+              const monthImage = document.getElementById('month-image');
+              const table=document.getElementById('table-container');
+              const back = document.getElementById('back');
+              const incomeInput = document.getElementById('income');
+              const generate = document.getElementById('generate');
+
+
+              generate.addEventListener('click', function() {
+                const incomeValue = parseFloat(incomeInput.value);
+                const total = 750; // Total from your table
+
+                if (isNaN(incomeValue) || monthSelect.value === "") {
+                  alert("Please enter a valid income amount and select a month.");
+                  return;
+                }
+
+                const percentage = (total / incomeValue) * 100;
+
+                if (percentage > 80) {
+                  alert(`You have spent more than you should. We are a call away. Contact us so that we can give you financial advice to manage your spendings better. `);
+                } else {
+                  alert(`Excellent! You spent lesser than 80%`);
+                }
+              });
+
+        
+              const monthImageUrl = 'pie chart.png'
+
+
+
+        
+              monthSelect.addEventListener('change', function() {
+                if (this.value !== "") {
+                  monthImage.src = monthImageUrl;
+                  monthImage.style.display = 'block';
+                  table.style.display ='block';
+                  back.style.display = 'block';
+                  incomeInput.style.display ='block';
+                  generate.style.display ='block'
+                } else {
+                  monthImage.style.display = 'none';
+                  table.style.display = 'none';
+                  back.style.display = 'none';
+                  incomeInput.style.display ='none';
+                  generate.style.display ='none';
+
+                }
+              });
+            });
+
+
+           
+          </script>
+        </body>
